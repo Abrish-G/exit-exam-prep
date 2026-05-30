@@ -1,0 +1,244 @@
+/* Premium SaaS & Dashboard Style Architecture */
+:root {
+    --brand-primary: #3b82f6;
+    --brand-primary-hover: #2563eb;
+    --card-radius: 14px;
+    --btn-radius: 8px;
+    --border-soft: #f1f5f9;
+    --border-medium: #e2e8f0;
+    --bg-light-canvas: #f8fafc;
+    --text-primary: #0f172a;
+    --text-muted: #64748b;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-light-canvas) !important;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+}
+
+.tracking-tight {
+    letter-spacing: -0.025em;
+}
+
+/* Nav Styles */
+.text-primary-gradient {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-logout-modern {
+    border: 1px solid var(--border-medium);
+    background-color: #ffffff;
+    color: #ef4444;
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: var(--btn-radius);
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+.btn-logout-modern:hover {
+    background-color: #fef2f2;
+    border-color: #fca5a5;
+}
+
+/* Hero Card Background Box Styling */
+.dashboard-hero {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid var(--border-medium);
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.02);
+}
+
+.hero-bg-decoration {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.badge-accent {
+    background-color: #eff6ff;
+    color: var(--brand-primary);
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: 20px;
+}
+
+/* Premium Minimalist White Cards */
+.card-premium {
+    background: #ffffff;
+    border: 1px solid var(--border-medium);
+    border-radius: var(--card-radius);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 16px -6px rgba(15, 23, 42, 0.03);
+}
+
+/* Modern Dashboard Grid Controls & Shapes */
+.icon-shape {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.bg-primary-soft { background-color: #eff6ff; }
+.bg-danger-soft { background-color: #fef2f2; }
+
+/* Beautiful Premium Core Action Buttons */
+.btn-premium-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--btn-radius);
+    border: none;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    transition: all 0.15s ease;
+}
+.btn-premium-primary:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
+}
+
+.btn-premium-dark {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--btn-radius);
+    border: none;
+    transition: background 0.15s ease;
+}
+.btn-premium-dark:hover {
+    background: #1e293b;
+    color: #ffffff;
+}
+
+/* Text link transitions */
+.back-link {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+.back-link:hover {
+    color: var(--brand-primary);
+}
+
+/* Clean Minimalist Theme Base */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8fafc !important;
+    color: #334155;
+}
+
+/* Base Card & Shadow Adjustments */
+.card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Custom Lettering Spacing for Labels */
+.tracking-wider {
+    letter-spacing: 0.05em;
+    font-size: 0.75rem !important;
+}
+
+/* Native Form UI Fields Focus States */
+.form-select:focus, .form-check-input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Native Checkbox Overrides */
+.form-check-input:checked {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}
+
+/* Clean Custom Scrollbar for Course Box */
+div::-webkit-scrollbar {
+    width: 6px;
+}
+div::-webkit-scrollbar-track {
+    background: transparent;
+}
+div::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+/* Elegant Grid Choice Cards */
+.custom-grid-card {
+    border: 1px solid #e2e8f0 !important;
+    background-color: #ffffff !important;
+    border-radius: 8px !important;
+    transition: all 0.15s ease-in-out;
+}
+.custom-grid-card:hover {
+    background-color: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+}
+
+/* Custom Bootstrap State overrides for active checked radio cards */
+.btn-check:checked + .custom-grid-card {
+    border-color: #8eb0e6 !important;
+    background-color: #f0f7ff !important;
+    box-shadow: 0 0 0 1px #3b82f6;
+}
+.btn-check:checked + .custom-grid-card .fw-bold {
+    color: #8ea7ea !important;
+}
+
+/* Premium Select Box Styling */
+.custom-select-premium {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #0f172a;
+    background-color: #ffffff;
+    transition: all 0.15s ease;
+}
+.custom-select-premium:focus {
+    border-color: #a8c4f2;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.08);
+}
+
+/* Button & Scroll Control Base */
+.btn-brand-submit {
+    background-color: #2563eb;
+    border: none;
+}
+.btn-brand-submit:hover {
+    background-color: #1d4ed8;
+}
+
+.custom-scrollbar-box::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scrollbar-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar-box::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
