@@ -23,15 +23,11 @@ if(isset($_POST['login'])){
             $_SESSION['role'] = $user['role'];
 
             if($user['role'] == 'admin'){
-
-    header("Location: admin/dashboard.php");
-
-}else{
-
-    header("Location: dashboard.php");
-}
-
-exit();
+                header("Location: admin/dashboard.php");
+            }else{
+                header("Location: dashboard.php");
+            }
+            exit();
 
         }else{
             $message = "Invalid password";
@@ -44,47 +40,161 @@ exit();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover: #4338ca;
+            --bg-gradient: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+        }
 
+        body {
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .auth-card {
+            background: var(--card-bg);
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .auth-header h3 {
+            color: var(--text-main);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .form-label {
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 0.625rem 0.875rem;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+            outline: 0;
+        }
+
+        .btn-modern {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.625rem 1.25rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-modern:hover {
+            background-color: var(--primary-hover);
+            color: #ffffff;
+        }
+
+        .alert-custom {
+            border-radius: 8px;
+            border: none;
+            background-color: #fee2e2;
+            color: #991b1b;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .switch-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .switch-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body class="bg-light">
+<body>
 
-<div class="container my-5">
+<div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="card card-custom p-4">
-                <div class="text-center my-3">
-                    <h3 class="fw-bold tracking-tight">System Authentication</h3>
-                    <p class="text-muted">Exit Exam Preparation System Gateway</p>
-                </div>
-                
-                <?php if($message){ ?>
-                    <div class="alert alert-danger border-0 shadow-sm small"><?= $message ?></div>
-                <?php } ?>
+        <div class="col-10 col-sm-8 col-md-6 col-lg-4">
 
-                <form method="POST" class="mt-4">
-                    <div class="mb-3">
-                        <label class="form-label small fw-bold text-muted">Corporate Email Address</label>
-                        <input type="email" name="email" class="form-control form-control-lg border-2" style="border-radius:8px;" required>
+            <div class="card auth-card p-3 p-sm-4">
+                <div class="card-body">
+                    
+                    <div class="auth-header text-center mb-4">
+                        <h3>Welcome Back</h3>
+                        <p class="text-muted small m-0">Sign in to your exit evaluation session</p>
                     </div>
 
-                    <div class="mb-4">
-                        <label class="form-label small fw-bold text-muted">Security Access Password</label>
-                        <input type="password" name="password" class="form-control form-control-lg border-2" style="border-radius:8px;" required>
+                    <?php if($message){ ?>
+                        <div class="alert alert-custom text-center mb-4 py-2.5">
+                            <?= $message ?>
+                        </div>
+                    <?php } ?>
+
+                    <form method="POST">
+
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email"
+                                   name="email"
+                                   class="form-control"
+                                   placeholder="Enter your email"
+                                   required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">Password</label>
+                            <input type="password"
+                                   name="password"
+                                   class="form-control"
+                                   placeholder="••••••••"
+                                   required>
+                        </div>
+
+                        <button type="submit"
+                                name="login"
+                                class="btn btn-modern w-100">
+                            Sign In
+                        </button>
+
+                    </form>
+
+                    <div class="mt-4 text-center">
+                        <span class="text-muted small">New to the platform?</span>
+                        <a href="register.php" class="switch-link small ms-1">
+                            Create account
+                        </a>
                     </div>
 
-                    <button type="submit" name="login" class="btn btn-custom-primary w-100 py-2.5 fw-semibold fs-5">Authenticate Credentials</button>
-                </form>
-
-                <div class="mt-4 text-center">
-                    <span class="text-muted small">New to the platform?</span> 
-                    <a href="register.php" class="text-decoration-none fw-semibold text-primary ms-1">Create an Account</a>
                 </div>
             </div>
+
         </div>
     </div>
 </div>

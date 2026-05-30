@@ -46,7 +46,7 @@
                             Go through core curriculum targets at your own pace. Includes instantaneous feedback with descriptive answer answer keys and contextual review loops.
                         </p>
                     </div>
-                    <a href="select_exam.php?default_mode=prep" class="btn btn-premium-primary w-100">
+                    <a href="select_exam.php?default_mode=prep" class="btn btn-premium-primary w-100" style="background-color: #dbeafe;">
                         Launch Practice Stream
                     </a>
                 </div>
@@ -65,7 +65,7 @@
                             Simulate uniform graduation test environments. Builds a strict standard 100-question multi-course assessment pool with formal final review submission criteria.
                         </p>
                     </div>
-                    <a href="select_exam.php?default_mode=exam" class="btn btn-premium-dark w-100">
+                    <a href="select_exam.php?default_mode=exam" class="btn btn-premium-dark w-100" style="background-color: #ccd9f8 ;">
                         Begin Live Simulation
                     </a>
                 </div>
