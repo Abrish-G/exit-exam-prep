@@ -4,71 +4,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin System Terminal</title>
+    <title>Admin Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <style>
+        
+    </style>
 </head>
 <body>
 
+<div class="mobile-header">
+    <div class="d-flex align-items-center gap-2 text-white fw-bold">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:1.5rem; height:1.5rem; color: var(--primary-color);">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0 0 15 0m-15 0a7.5 7.5 0 1 1 15 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.827m11.379-8.16l1.15-.827M8.14 21.27l.707-1.03m7.45-.808l.707-1.03M12 3v1.5m0 15V21m4.743-10l-1.149-.827M7.365 5.835l-1.148-.827M18.293 8.293l-1.414 1.414M7.121 16.879l-1.414 1.414M12 12M12 12h.008v.008H12V12z" />
+        </svg>
+        <span>Admin Panel</span>
+    </div>
+    <button class="btn border-0 text-white p-1" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:1.75rem; height:1.75rem;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+    </button>
+</div>
+
 <div class="admin-shell">
-    <div class="responsive-sidebar">
-        <div class="sidebar-brand-wrapper mb-4">
-            <span class="text-white">🛠️ Management Console</span>
+    <div class="collapse responsive-sidebar justify-content-between" id="sidebarMenu">
+        <div>
+            <div class="sidebar-brand-wrapper mb-3 mb-md-4 text-white d-none d-md-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:1.5rem; height:1.5rem; color: var(--primary-color);">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0 0 15 0m-15 0a7.5 7.5 0 1 1 15 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.827m11.379-8.16l1.15-.827M8.14 21.27l.707-1.03m7.45-.808l.707-1.03M12 3v1.5m0 15V21m4.743-10l-1.149-.827M7.365 5.835l-1.148-.827M18.293 8.293l-1.414 1.414M7.121 16.879l-1.414 1.414M12 12M12 12h.008v.008H12V12z" />
+                </svg>
+                <span>Admin Panel</span>
+            </div>
+            
+            <div class="d-flex flex-column gap-1">
+                <a href="dashboard.php" class="sidebar-nav-link active">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
+                    </svg>
+                    Dashboard
+                </a>
+                <a href="manage_courses.php" class="sidebar-nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                    </svg>
+                    Courses
+                </a>
+                <a href="manage_questions.php" class="sidebar-nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                    </svg>
+                    Questions
+                </a>
+                <a href="manage_users.php" class="sidebar-nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A12.48 12.48 0 0 1 6 18.719m0 0a8.967 8.967 0 0 1 3.741-.479 3 3 0 0 1-4.682-2.72m.94 3.198.002.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 0 12 21c2.17 0 4.207-.576 5.963-1.584A12.48 12.48 0 0 0 18 18.72m-12 0a9 9 0 0 0 12 0M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm7.428 3.58a3.36 3.36 0 0 0-3.428-3.58 3.36 3.36 0 0 0-3.428 3.58M4.572 15.58a3.36 3.36 0 0 1 3.428-3.58 3.36 3.36 0 0 1 3.428 3.58" />
+                    </svg>
+                    Users
+                </a>
+                <a href="analytics.php" class="sidebar-nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" />
+                    </svg>
+                    Analytics
+                </a>
+            </div>
         </div>
-        <div class="d-flex flex-column gap-1">
-            <a href="dashboard.php" class="sidebar-nav-link active">📊 System Overview</a>
-            <a href="manage_courses.php" class="sidebar-nav-link">📚 Course Fields</a>
-            <a href="manage_questions.php" class="sidebar-nav-link">📝 MCQ Repositories</a>
-            <a href="manage_users.php" class="sidebar-nav-link">👥 User Accounts</a>
-            <a href="analytics.php" class="sidebar-nav-link">📈 Metrics Stream</a>
-            <a href="../logout.php" class="btn btn-sm btn-outline-danger w-100 mt-4 text-start d-flex align-items-center gap-2" style="border-radius: var(--radius-sm);">🚪 Disconnect Admin</a>
+        
+        <div class="mt-4 pt-3 border-top border-secondary">
+            <a href="../logout.php" class="sidebar-nav-link btn-modern-action btn-outline-danger-custom justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                </svg>
+                Logout
+            </a>
         </div>
     </div>
 
-    <div class="main-content-window p-3 p-sm-5">
-        <div class="row mb-5">
-            <div class="col text-center text-md-start">
-                <h1 class="fw-bold tracking-tight m-0">Administrative Hub</h1>
-                <p class="text-muted">Maintain curriculum paths, import structured schema metrics, and monitor student accounts data paths.</p>
-            </div>
+    <div class="main-content-wrapper">
+        <div class="page-header mb-4 pb-2 text-center text-md-start">
+            <h2>System Overview</h2>
+            <p class="text-muted m-0">Informatics Department Examination Database Management</p>
         </div>
 
         <div class="row g-4">
-            <div class="col-sm-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card card-modern h-100">
                     <div class="card-body p-4 d-flex flex-column justify-content-between">
                         <div>
-                            <div class="fs-2 mb-2 text-primary">📥</div>
-                            <h5 class="fw-bold">Ingest JSON Dataset</h5>
-                            <p class="text-muted small m-0">Bulk map externally parsed multi-choice arrays into standard table relational configurations smoothly.</p>
+                            <div class="card-icon-container bg-info-subtle text-info">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width: 1.75rem; height: 1.75rem;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V3.75m0 12.75l-4.5-4.5m4.5 4.5l4.5-4.5M4.5 20.25h15" />
+                                </svg>
+                            </div>
+                            <h5 class="fw-bold">Upload JSON</h5>
+                            <p class="text-muted small m-0">Parse external question batches directly into the system application records from JSON formatting.</p>
                         </div>
-                        <a href="upload_json.php" class="btn btn-modern-primary w-100 mt-4">Parse Local Files</a>
+                        <a href="upload_json.php" class="btn-modern-action btn-modern-primary w-100 mt-4">Upload Questions</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-sm-6 col-lg-4">
+            <div class="col-12 col-sm-6 col-lg-4">
                 <div class="card card-modern h-100">
                     <div class="card-body p-4 d-flex flex-column justify-content-between">
                         <div>
-                            <div class="fs-2 mb-2 text-warning">✏️</div>
-                            <h5 class="fw-bold">Review MCQ Banks</h5>
-                            <p class="text-muted small m-0">Audit system database records, drop invalid text entries, or isolate test objects safely.</p>
+                            <div class="card-icon-container bg-secondary-subtle text-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width: 1.75rem; height: 1.75rem;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                </svg>
+                            </div>
+                            <h5 class="fw-bold">Manage MCQs</h5>
+                            <p class="text-muted small m-0">Review written question catalogs, isolate single objects, and delete bad or corrupt test items.</p>
                         </div>
-                        <a href="manage_questions.php" class="btn btn-dark w-100 mt-4" style="border-radius: var(--radius-sm);">Modify Matrix Records</a>
+                        <a href="manage_questions.php" class="btn-modern-action btn-modern-dark w-100 mt-4">Modify Records</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-sm-6 col-lg-4">
+            <div class="col-12 col-md-12 col-lg-4">
                 <div class="card card-modern h-100">
                     <div class="card-body p-4 d-flex flex-column justify-content-between">
                         <div>
-                            <div class="fs-2 mb-2 text-success">📚</div>
-                            <h5 class="fw-bold">Maintain Course Paths</h5>
-                            <p class="text-muted small m-0">Register structural disciplines, modify subject targets, and attach metadata labels dynamically.</p>
+                            <div class="card-icon-container bg-success-subtle text-success">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width: 1.75rem; height: 1.75rem;">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                                </svg>
+                            </div>
+                            <h5 class="fw-bold">Manage Courses</h5>
+                            <p class="text-muted small m-0">Register structural disciplines, define target subject tracks, and configure label metadata parameters.</p>
                         </div>
-                        <a href="manage_courses.php" class="btn btn-success w-100 mt-4" style="border-radius: var(--radius-sm);">Inspect Faculty Fields</a>
+                        <a href="manage_courses.php" class="btn-modern-action btn-modern-success w-100 mt-4">Inspect Courses</a>
                     </div>
                 </div>
             </div>
@@ -76,5 +143,6 @@
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

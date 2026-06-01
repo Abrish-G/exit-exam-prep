@@ -13,39 +13,9 @@ if(isset($_POST['register'])){
             VALUES('$fullname','$email','$password')";
 
     if($conn->query($sql)){
-        $message = "Registration successful";
-    }else{
-        $message = "Email already exists";
-    }
-}
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Register</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-<body class="bg-light">
-
-<?php
-include 'includes/db.php';
-
-$message = "";
-
-if(isset($_POST['register'])){
-
-    $fullname = $_POST['fullname'];
-    $email    = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
-    $sql = "INSERT INTO users(fullname,email,password)
-            VALUES('$fullname','$email','$password')";
-
-    if($conn->query($sql)){
-        $message = "Registration successful";
+        // Redirect directly to login page on success
+        header("Location: login.php");
+        exit();
     }else{
         $message = "Email already exists";
     }
@@ -65,7 +35,7 @@ if(isset($_POST['register'])){
         :root {
             --primary-color: #0284c7;
             --primary-hover: #0369a1;
-            --bg-gradient: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+            --bg-gradient: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
             --card-bg: #ffffff;
             --text-main: #1f2937;
             --text-muted: #6b7280;
@@ -162,11 +132,7 @@ if(isset($_POST['register'])){
                     </div>
 
                     <?php if($message){ ?>
-                        <?php 
-                            $is_success = (strpos($message, 'successful') !== false);
-                            $alert_class = $is_success ? 'alert-success text-success bg-success-subtle' : 'alert-danger text-danger bg-danger-subtle';
-                        ?>
-                        <div class="alert alert-custom <?= $alert_class ?> text-center mb-4 py-2.5">
+                        <div class="alert alert-custom alert-danger text-danger bg-danger-subtle text-center mb-4 py-2.5">
                             <?= $message ?>
                         </div>
                     <?php } ?>
@@ -178,7 +144,7 @@ if(isset($_POST['register'])){
                             <input type="text"
                                    name="fullname"
                                    class="form-control"
-                                   placeholder="Enter your full name"
+                                   placeholder="John Doe"
                                    required>
                         </div>
 
@@ -187,7 +153,7 @@ if(isset($_POST['register'])){
                             <input type="email"
                                    name="email"
                                    class="form-control"
-                                   placeholder="Enter your email"
+                                   placeholder="name@university.edu"
                                    required>
                         </div>
 
@@ -222,7 +188,5 @@ if(isset($_POST['register'])){
     </div>
 </div>
 
-</body>
-</html>
 </body>
 </html>
