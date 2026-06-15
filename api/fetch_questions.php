@@ -9,7 +9,12 @@ if ($course_id <= 0) {
     exit();
 }
 
-$stmt = $conn->prepare('SELECT id, question_text, option_a, option_b, option_c, option_d FROM questions WHERE course_id = ?');
+$stmt = $conn->prepare('
+    SELECT q.id, q.question, q.option_a, q.option_b, q.option_c, q.option_d, q.label, c.course_name 
+    FROM questions q 
+    JOIN courses c ON q.course_id = c.id 
+    WHERE q.course_id = ?
+');
 $stmt->bind_param('i', $course_id);
 $stmt->execute();
 $result = $stmt->get_result();
