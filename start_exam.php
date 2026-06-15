@@ -8,6 +8,7 @@ include 'includes/db.php';
 $user_id = $_SESSION['user_id'];
 
 $mode = $_POST['mode'];
+$label = $_POST['label']; // Add this line to retrieve the label
 
 $selected_courses = $_POST['courses'] ?? [];
 
